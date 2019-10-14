@@ -33,6 +33,7 @@ public class GeometryTest {
     Assert.assertEquals(2.0, actual.x, 0.0);
   }
 
+
   @Test
   public void diffVectorInputNotNullNotNullOutputNotNull() {
     final Point2D point2D = new Point2D(2.0, 2.0);
@@ -95,33 +96,6 @@ public class GeometryTest {
   }
 
   @Test
-  public void cloneOutputNotNull1() {
-    final Vector thisObj = new Vector(-1e-06, -1e-06);
-    final Vector actual = thisObj.clone();
-    Assert.assertNotNull(actual);
-    Assert.assertEquals(-1e-06, actual.x, 0.0);
-    Assert.assertEquals(-1e-06, actual.y, 0.0);
-  }
-
-  @Test
-  public void diffVectorInputNotNullNotNullOutputNotNull1() {
-    final Vector arg0 = new Vector(1.0, 1.0);
-    final Vector arg1 = new Vector(1.0, 1.0);
-    final Vector actual = Geometry.diffVector(arg0, arg1);
-    Assert.assertNotNull(actual);
-    Assert.assertEquals(0.0, actual.x, 0.0);
-    Assert.assertEquals(0.0, actual.y, 0.0);
-  }
-
-  @Test
-  public void distance2InputNotNullNotNullOutputZero1() {
-    final Vector arg0 = new Vector(1.0, 1.0);
-    final Vector arg1 = new Vector(1.0, 1.0);
-    final double actual = Geometry.distance2(arg0, arg1);
-    Assert.assertEquals(0.0, actual, 0.0);
-  }
-
-  @Test
   public void minusEqualInputNotNullNegativeOutputVoid() {
     final Vector thisObj = new Vector(-1e-06, -1e-06);
     final Vector arg0 = new Vector(-1e-06, -1e-06);
@@ -150,11 +124,4 @@ public class GeometryTest {
     Assert.assertEquals(1e-12, thisObj.y, 0.0);
   }
 
-  @Test
-  public void zeroOutputVoid1() {
-    final Vector thisObj = new Vector(-1e-06, -1e-06);
-    thisObj.zero();
-    Assert.assertEquals(0.0, thisObj.x, 0.0);
-    Assert.assertEquals(0.0, thisObj.y, 0.0);
-  }
 }
